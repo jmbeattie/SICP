@@ -23,3 +23,15 @@
 (define (midpoint-segment line)
   (make-point (average (x-point (start-segment line)) (x-point (end-segment line))) 
 	      (average (y-point (start-segment line)) (y-point (end-segment line)))))
+
+(define (make-rect1 ul br) (cons ul br))
+
+(define (make-rect2 line) (cons (start-segment line) (end-segment line)))
+
+(define (rect-width rect) (- (x-point (car rect)) (x-point (cdr rect))))
+
+(define (rect-height rect) (- (y-point (car rect)) (y-point (cdr rect))))
+
+(define (rect-perim rect) (+ (abs (* 2 (rect-width rect))) (abs (* 2 (rect-height rect)))))
+
+(define (rect-area rect) (* (rect-width rect) (rect-height rect)))
