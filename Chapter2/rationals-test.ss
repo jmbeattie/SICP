@@ -1,0 +1,15 @@
+(load "Chapter2/rationals.ss")
+
+(define rat1 (make-rat 3 4))
+(define rat2 (make-rat (- 3) (- 4)))
+(define rat3 (make-rat (- 3) 4))
+(define rat4 (make-rat 3 (- 4)))
+(define rat5 (make-rat 6 8))
+
+(assert (equal-rat? rat1 rat2))
+(assert (equal-rat? rat1 rat5))
+(assert (equal-rat? rat3 rat4))
+(assert (not (equal-rat? rat1 rat3)))
+(assert (not (equal-rat? rat1 rat4)))
+(assert (not (equal-rat? rat2 rat3)))
+(assert (not (equal-rat? rat2 rat4)))
